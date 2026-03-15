@@ -15,7 +15,7 @@ export default function App() {
   const [apiProvider, setApiProvider] = useState<'gemini' | 'deepseek'>(
     (localStorage.getItem('api_provider') as 'gemini' | 'deepseek') || 'gemini'
   );
-  const [apiKey, setApiKey] = useState(localStorage.getItem('gemini_api_key') || process.env.GEMINI_API_KEY || '');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('gemini_api_key') || '');
   const [deepseekApiKey, setDeepseekApiKey] = useState(localStorage.getItem('deepseek_api_key') || '');
   const [showSettings, setShowSettings] = useState(false);
   const [showEdit, setShowEdit] = useState(false);

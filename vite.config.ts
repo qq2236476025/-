@@ -1,10 +1,10 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { defineConfig } from 'vite'; // 注意：删除了 loadEnv
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/-/',  // 关键：仓库名是“-”，前后加斜杠
+  base: '/-/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
