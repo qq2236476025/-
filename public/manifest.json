@@ -1,0 +1,17 @@
+{
+  "name": "食材百科小词典",
+  "short_name": "食材百科",
+  "description": "温馨手绘风的PWA食材百科，支持离线访问和AI查询",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#8BC34A",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

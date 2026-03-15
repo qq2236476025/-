@@ -1,0 +1,5 @@
+{
+  "name": "食材百科小词典",
+  "description": "温馨手绘风的PWA食材百科，支持离线访问和AI查询",
+  "requestFramePermissions": []
+}
