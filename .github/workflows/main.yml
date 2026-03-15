@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]   # 当推送到 main 分支时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'        # 启用 npm 缓存，加速安装
+
+      - name: Install Dependencies
+        run: npm ci           # 使用 package-lock.json 进行确定性安装
+
+      - name: Build
+        run: npm run build
+        env:
+          # 如果构建时需要基础路径，可以通过环境变量传入（但你的 vite.config.ts 已设置 base）
+          VITE_BASE_URL: '/-/'
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages        # 部署到 gh-pages 分支
+          folder: dist            # 构建输出的文件夹
